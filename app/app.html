@@ -28,15 +28,34 @@
 
 <body ng-controller="timecardReviewCtrl"> <!-- Begin body. -->
 
-   <div class="navbar navbar-inverse"> <!-- Begin navbar. -->
-      <a class="navbar-brand"><font color="#00BFFF">Timecard Review</font></a>
+   <div class="navbar navbar-inverse" role="navigation"> <!-- Begin navbar. -->
+         <div class="navbar-header"> <!-- Begin navbar header. -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"><font color="#00BFFF">Timecard Review</font></a>
+         </div> <!-- End navbar header. -->
+         <div class="collapse navbar-collapse"> <!--Begin nav-collapse. -->
+            <ul class="nav navbar-nav">
+               <li><a href="#/list">List</a></li>
+               <li><a href="#/instructions">Instructions</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+               <li><a href="#/login" ng-click="logOut()">Log Out</a></li>
+            <ul>
+         </div> <!--End nav-collapse. -->
    </div> <!-- End navbar. -->
 
-   <div class="well"> <!-- Begin well. -->
+   <!--
+   <div class="well">
       <a href="#/list"><button type="button" class="btn btn-default btn-sm">List</button></a>
       <a href="#/instructions"><button type="button" class="btn btn-default btn-sm">Instructions</button></a>
       <a href="#/login"><button type="button" class="btn btn-default btn-sm" ng-click="logOut()">Log Out</button></a>
-   </div> <!-- End well. -->
+   </div>
+   -->
 
    <div class="panel"> <!-- Begin panel. -->
       <div ng-view></div> <!-- Insert the view based the route. -->
@@ -45,6 +64,7 @@
    <!-- Additional scripts at bottom so page loads faster. -->
    <script src="js/jquery-1.11.1.min.js"></script>
    <script src="js/tab.js"></script>
+   <script src="js/bootstrap.min.js"></script>
 
 </body> <!-- End body. -->
 </html> <!-- End html. -->

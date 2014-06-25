@@ -10,6 +10,7 @@ angular.module('timecardReview')
             restService.put('/employees/' + $scope.employee.employeenumber, $scope.employee, handleSuccess);
 
             $location.path('/review/' + $scope.employee.employeenumber);
+            $scope.$apply();
 
             $window.location.reload(); // Refresh the page.
         }
