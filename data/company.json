@@ -20,10 +20,10 @@
             "personalholiday": "8"
         },
         "laborhoursdistribution": [
-            { "project": "123456", "task": "22.2.01", "svCode": "", "userdescription": "", "percentage": "100", "comments": "", "hours": [ 9, 9, 9, 9, 8, 0, 0 ] }
+            { "project": "123456", "task": "22.2.01", "svCode": "SV1123", "userdescription": "Robotics", "percentage": "100", "comments": "None", "hours": [ 9, 9, 9, 9, 8, 0, 0 ] }
         ],
         "paidleave": [
-            { "paycode": "", "commentsrelationship": "", "hours": [ 0, 0, 0, 0, 0, 0, 0 ] }
+            { "paycode": "PCABD", "commentsrelationship": "Cash", "hours": [ 0, 0, 0, 0, 0, 0, 0 ] }
         ],
         "wams": [
             { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.01", "taskname": "Maintenance",  "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
@@ -53,10 +53,10 @@
             "personalholiday": "70"
         },
         "laborhoursdistribution": [
-            { "project": "123456", "task": "22.2.01", "svCode": "", "userdescription": "", "percentage": "100", "comments": "", "hours": [ 9, 9, 9, 9, 8, 0, 0 ] }
+            { "project": "123456", "task": "22.2.01", "svCode": "SV3353", "userdescription": "DBMS", "percentage": "100", "comments": "None", "hours": [ 9, 9, 9, 9, 8, 0, 0 ] }
         ],
         "paidleave": [
-            { "paycode": "asdf", "commentsrelationship": "Yo mama", "hours": [ 0, 0, 0, 0, 0, 0, 0 ] }
+            { "paycode": "PCEDF", "commentsrelationship": "I like turtles", "hours": [ 0, 0, 0, 0, 0, 0, 0 ] }
         ],
         "wams": [
             { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.01", "taskname": "Maintenance",  "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
@@ -86,10 +86,10 @@
             "personalholiday": "215"
         },
         "laborhoursdistribution": [
-            { "project": "123456", "task": "22.2.01", "svCode": "", "userdescription": "", "percentage": "100", "comments": "", "hours": [ 9, 9, 9, 9, 8, 0, 0 ] }
+            { "project": "123456", "task": "22.2.01", "svCode": "SV3593", "userdescription": "AngularJS", "percentage": "100", "comments": "None", "hours": [ 9, 9, 9, 9, 8, 0, 0 ] }
         ],
         "paidleave": [
-            { "paycode": "", "commentsrelationship": "", "hours": [ 0, 0, 0, 0, 0, 0, 0 ] }
+            { "paycode": "PCEKG", "commentsrelationship": "None", "hours": [ 0, 0, 0, 0, 0, 0, 0 ] }
         ],
         "wams": [
             { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.01", "taskname": "Maintenance",  "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
@@ -119,10 +119,10 @@
             "personalholiday": "101"
         },
         "laborhoursdistribution": [
-            { "project": "123456", "task": "22.2.01", "svCode": "", "userdescription": "", "percentage": "100", "comments": "", "hours": [ 9, 9, 9, 9, 8, 0, 0 ] }
+            { "project": "123456", "task": "22.2.01", "svCode": "SV3050", "userdescription": "Node.js", "percentage": "100", "comments": "None", "hours": [ 9, 9, 9, 9, 8, 0, 0 ] }
         ],
         "paidleave": [
-            { "paycode": "", "commentsrelationship": "", "hours": [ 0, 0, 0, 0, 0, 0, 0 ] }
+            { "paycode": "PCTYO", "commentsrelationship": "None", "hours": [ 0, 0, 0, 0, 0, 0, 0 ] }
         ],
         "wams": [
             { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.01", "taskname": "Maintenance",  "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
