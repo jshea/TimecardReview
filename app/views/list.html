@@ -1,0 +1,67 @@
+<div ng-controller="listCtrl">
+  <div class="well well-sm">
+      <h3><span class="label label-primary">Supervisor</span> {{employees[0].manager.name}}</h3>
+  </div>
+
+  <div class="well well-sm">
+      <label>Search </label>
+      <input type="text" ng-model="searchText" placeholder="Name">
+  </div>
+
+  <div class="well"> <!-- Begin well. -->
+    <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th><h4><span class="label label-danger">Not Reviewed</span></h4></th>
+              </tr>
+              <tr>
+                  <th>Name</th>
+                  <th>Classification</th>
+                  <th>Timecard Status</th>
+                  <th>Has Employees</th>
+                  <th>Vacation Days</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="person in employees | filter:{reviewed:false} | filter:searchText">
+                  <td><a href="" ng-click="loadById(person.employeenumber)">{{person.name}}</a></td>
+                  <td>{{person.classification}}</td>
+                  <td>{{person.timecardstatus}}</td>
+                  <td>{{person.hasemployees}}</td>
+                  <td>{{person.accrual.vacation}}</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div> <!-- End well. -->
+
+    <div class="well"> <!-- Begin well. -->
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th><h4><span class="label label-success">Reviewed</span></h4></th>
+              </tr>
+              <tr>
+                  <th>Name</th>
+                  <th>Classification</th>
+                  <th>Timecard Status</th>
+                  <th>Has Employees</th>
+                  <th>Vacation Days</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="person in employees | filter:{reviewed:true} | filter:searchText">
+                  <td><a href="" ng-click="loadById(person.employeenumber)">{{person.name}}</a></td>
+                  <td>{{person.classification}}</td>
+                  <td>{{person.timecardstatus}}</td>
+                  <td>{{person.hasemployees}}</td>
+                  <td>{{person.accrual.vacation}}</td>
+              </tr>
+          </tbody>
+        </table>
+    </div> <!-- End well. -->
+
+  </div>
+</div>

@@ -1,0 +1,146 @@
+<div ng-controller="reviewCtrl"> <!-- Begin review controller. -->
+
+   <div class="well well-sm">
+      <h4><span class="label label-primary">Employee Name</span> {{employee.name}}</h4>
+      <h4><span class="label label-primary">Timecard Status</span> {{employee.timecardstatus}}</h4>
+   </div>
+
+   <div class="well well-sm"> <!-- Begin well. -->
+      <label><input type="checkbox" ng_model="employee.reviewed"> Reviewed</label>&nbsp;&nbsp;&nbsp;
+      <button type="button" class="btn btn-success btn-sm" ng-click="put()">Save</button>
+   </div> <!-- End well. -->
+
+   <div class="panel"> <!-- Begin panel. -->
+      
+      <ul id="myTab" class="nav nav-tabs">
+         <li class="active"><a href="#review" data-toggle="tab">Review</a></li>
+         <li><a href="#wam" data-toggle="tab">Accruals and WAMs</a></li>
+      </ul>
+
+      <div id="myTabContent" class="tab-content"> <!-- Begin my tab content. -->
+         <div class="tab-pane fade in active" id="review"> <!-- Begin tab pane. -->
+
+            <div class="table-responsive"> <!-- Begin table responsive. -->
+               <table class="table table-striped">
+                  <thead>
+                     <tr>
+                        <th><h4><span class="label label-primary">Labor Hours Distribution</span></h4></th>
+                     </tr>
+                     <tr>
+                        <th style="width: 16%">Project</th>
+                        <th style="width: 16%">Task</th>
+                        <th style="width: 16%">SV Code</th>
+                        <th style="width: 16%">Description</th>
+                        <th style="width: 16%">%</th>
+                        <th style="width: 16%">Comments</th>
+                     </tr>
+                  </thead>
+               <tbody>
+                  <tr ng-repeat="item in employee.laborhoursdistribution">
+                     <td>{{item.project}}</td>
+                     <td>{{item.task}}</td>
+                     <td>{{item.svCode}}</td>
+                     <td>{{item.userdescription}}</td>
+                     <td>{{item.percentage}}</td>
+                     <td>{{item.comments}}</td>
+                  </tr>
+               </tbody>
+               </table>
+            </div> <!-- End table responsive. -->
+
+            <div class="table-responsive"> <!-- Begin table responsive. -->
+               <table class="table table-striped">
+                  <thead>
+                     <tr>
+                        <th><h4><span class="label label-primary">Paid Leave</span></h4></th>
+                     </tr>
+                     <tr>
+                        <th style="width: 11%">Pay Code</th>
+                        <th style="width: 11%">Mon</th>
+                        <th style="width: 11%">Tue</th>
+                        <th style="width: 11%">Wed</th>
+                        <th style="width: 11%">Thu</th>
+                        <th style="width: 11%">Fri</th>
+                        <th style="width: 11%">Sat</th>
+                        <th style="width: 11%">Sun</th>
+                        <th style="width: 11%">Comments</th>
+                     </tr>
+                  </thead>
+                     <tr ng-repeat="item in employee.paidleave">
+                        <td>{{item.paycode}}</td>
+                        <td>{{item.hours[0]}}</td>
+                        <td>{{item.hours[1]}}</td>
+                        <td>{{item.hours[2]}}</td>
+                        <td>{{item.hours[3]}}</td>
+                        <td>{{item.hours[4]}}</td>
+                        <td>{{item.hours[5]}}</td>
+                        <td>{{item.hours[6]}}</td>
+                        <td>{{item.commentsrelationship}}</td>
+                     </tr>
+                  <tbody>
+                  </tbody>
+               </table>
+            </div> <!-- End table responsive. -->
+         </div> <!-- End tab pane. -->
+
+         <div class="tab-pane fade" id="wam"> <!-- Begin tab pane. -->
+
+            <div class="table-responsive"> <!-- Begin table responsive. -->
+               <table class="table table-striped">
+                  <thead>
+                     <tr>
+                        <th><h4><span class="label label-primary">Accrual</span></h4></th>
+                     </tr>
+                     <tr>
+                        <th style="width: 16%">Classification</th>
+                        <th style="width: 16%">Vacation Days</th>
+                        <th style="width: 16%">Personal Holidays</th>
+                        <th style="width: 16%">EWW Authorized</th>
+                        <th style="width: 16%">Sick Days</th>
+                        <th style="width: 16%">Work Week</th>
+                     </tr>
+                  </thead>
+               <tbody>
+                  <tr>
+                     <td>{{employee.classification}}</td>
+                     <td>{{employee.accrual.vacation}}</td>
+                     <td>{{employee.accrual.personalholiday}}</td>
+                     <td>{{employee.ewwauthorized}}</td>
+                     <td>{{employee.accrual.sick}}</td>
+                     <td>{{employee.weekending}}</td>
+                  </tr>
+               </tbody>
+               </table>
+            </div> <!-- End table responsive. -->
+
+            <div class="table-responsive">
+               <table class="table table-striped">
+                  <thead>
+                     <tr>
+                        <th><h4><span class="label label-primary">WAMs</span></h4></th>
+                     </tr>
+                     <tr>
+                        <th style="width: 20%">Project</th>
+                        <th style="width: 20%">Description</th>
+                        <th style="width: 20%">From</th>
+                        <th style="width: 20%">To</th>
+                        <th style="width: 20%">Chargeable</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr ng-repeat="item in employee.wams">
+                        <td>{{item.projectnumber}}</td>
+                        <td>{{item.projectname}}</td>
+                        <td>{{item.from}}</td>
+                        <td>{{item.to}}</td>
+                        <td>{{item.chargeable}}</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div> <!-- End tab pane. -->
+      </div> <!-- End my tab content. -->
+
+   </div> <!-- End panel. -->
+
+</div> <!-- End review controller. -->

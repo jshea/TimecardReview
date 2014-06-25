@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="timecardReview"> <!-- Begin html. -->
+<head> <!-- Begin head. -->
+   <title>Timecard Review</title>
+
+   <!-- AngularJS. -->
+   <script src="js/angular.js"></script>
+
+   <!-- CSS (Bootstrap). -->
+   <link href="css/bootstrap.css" rel="stylesheet" />
+   <link href="css/bootstrap-theme.css" rel="stylesheet" />
+
+   <!-- AngularJS helper scripts. -->
+   <script src="js/angular-route.js"></script>
+   <script src="js/angular-cookies.js"></script>
+
+   <!-- AngularJS 'Top-Level' Controller. -->
+   <script src="controllers/timecardReview.js"></script>
+
+   <!-- AngularJS Service scripts. -->
+   <script src="services/restService.js"></script>
+
+   <!-- AngularJS Controller scripts. -->
+   <script src="controllers/listController.js"></script>
+   <script src="controllers/reviewController.js"></script>
+   <script src="controllers/loginController.js"></script>
+</head> <!-- End head. -->
+
+<body ng-controller="timecardReviewCtrl"> <!-- Begin body. -->
+
+   <div class="navbar navbar-inverse"> <!-- Begin navbar. -->
+      <a class="navbar-brand"><font color="#00BFFF">Timecard Review</font></a>
+   </div> <!-- End navbar. -->
+
+   <div class="well"> <!-- Begin well. -->
+      <a href="#/list"><button type="button" class="btn btn-default btn-sm">List</button></a>
+      <a href="#/instructions"><button type="button" class="btn btn-default btn-sm">Instructions</button></a>
+      <a href="#/login"><button type="button" class="btn btn-default btn-sm" ng-click="logOut()">Log Out</button></a>
+   </div> <!-- End well. -->
+
+   <div class="panel"> <!-- Begin panel. -->
+      <div ng-view></div> <!-- Insert the view based the route. -->
+   </div> <!-- End panel. -->
+
+   <!-- Additional scripts at bottom so page loads faster. -->
+   <script src="js/jquery-1.11.1.min.js"></script>
+   <script src="js/tab.js"></script>
+
+</body> <!-- End body. -->
+</html> <!-- End html. -->
