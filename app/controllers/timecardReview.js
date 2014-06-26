@@ -24,14 +24,18 @@ timecardReviewApp.config(function ($routeProvider) {
 
 timecardReviewApp.controller('timecardReviewCtrl', function ($scope, $location, $cookieStore) {
     $scope.$watch( function() { 
-        return $location.path(); 
-    }, function(newValue, oldValue) {  
-        if (($cookieStore.get('employeenumber') === undefined) && newValue != '/login'){  
-            $location.path('/login');  
+        return $location.path(); // Set a watcher on the path.
+    }, function(newPath, oldPath) {  // If path changes we get the newPath and the oldPath.
+
+        var cookie = $cookieStore.get('employeenumber'); // Get login cookie.
+
+        if ((cookie === undefined) && newPath != '/login') {
+            $location.path('/login'); // Redirect to login.
         }
     });
 
     $scope.logOut = function() {
-        $cookieStore.remove('employeenumber');
+        $cookieStore.remove('employeenumber'); // Remove cookie on logout.
     }
 });
+

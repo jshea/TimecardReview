@@ -92,6 +92,33 @@
                      </tbody>
                   </table>
                </div> <!-- End table responsive. -->
+               <div class="table-responsive"> <!-- Begin table responsive. -->
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+                           <th><h4><span class="label label-primary">Accrual</span></h4></th>
+                        </tr>
+                        <tr>
+                           <th style="width: 16%">Classification</th>
+                           <th style="width: 16%">Vacation Days</th>
+                           <th style="width: 16%">Personal Holidays</th>
+                           <th style="width: 16%">EWW Authorized</th>
+                           <th style="width: 16%">Sick Days</th>
+                           <th style="width: 16%">Work Week</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>{{employee.classification}}</td>
+                           <td>{{employee.accrual.vacation}}</td>
+                           <td>{{employee.accrual.personalholiday}}</td>
+                           <td>{{employee.ewwauthorized}}</td>
+                           <td>{{employee.accrual.sick}}</td>
+                           <td>{{employee.weekending}}</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div> <!-- End table responsive. -->
             </div> <!-- End tab pane. -->
          </div> <!-- End my tab content. -->
          <!-- End Review Tab. -->
