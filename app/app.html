@@ -9,6 +9,7 @@
    <!-- CSS (Bootstrap). -->
    <link href="css/bootstrap.css" rel="stylesheet" />
    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+   <link href="css/dashboard.css" rel="stylesheet" />
 
    <!-- AngularJS helper scripts. -->
    <script src="js/angular-route.js"></script>
@@ -19,6 +20,7 @@
 
    <!-- AngularJS Service scripts. -->
    <script src="services/restService.js"></script>
+   <script src="services/loadService.js"></script>
 
    <!-- AngularJS Controller scripts. -->
    <script src="controllers/listController.js"></script>
@@ -28,7 +30,8 @@
 
 <body ng-controller="timecardReviewCtrl"> <!-- Begin body. -->
 
-   <div class="navbar navbar-inverse" role="navigation"> <!-- Begin navbar. -->
+   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"> <!-- Begin navbar. -->
+      <div class="container-fluid"> <!-- Begin container fluid. -->
          <div class="navbar-header"> <!-- Begin navbar header. -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                <span class="sr-only">Toggle navigation</span>
@@ -47,15 +50,8 @@
                <li><a href="#/login" ng-click="logOut()">Log Out</a></li>
             <ul>
          </div> <!--End nav-collapse. -->
+      </div> <!-- End container fluid. -->
    </div> <!-- End navbar. -->
-
-   <!--
-   <div class="well">
-      <a href="#/list"><button type="button" class="btn btn-default btn-sm">List</button></a>
-      <a href="#/instructions"><button type="button" class="btn btn-default btn-sm">Instructions</button></a>
-      <a href="#/login"><button type="button" class="btn btn-default btn-sm" ng-click="logOut()">Log Out</button></a>
-   </div>
-   -->
 
    <div class="panel"> <!-- Begin panel. -->
       <div ng-view></div> <!-- Insert the view based the route. -->

@@ -1,12 +1,8 @@
 angular.module('timecardReview')
-    .controller('listCtrl', function ($scope, $location, $cookieStore, restService) {
-        var id = $cookieStore.get('employeenumber');
-
-        restService.get('supervisor/' + id, function(data) {
+    .controller('listCtrl', function ($scope, $cookieStore, restService, loadService) {
+        restService.get('supervisor/' + $cookieStore.get('employeenumber'), function(data) {
             $scope.employees = data;
         });
 
-        $scope.loadById = function (id) {
-            $location.path('/review/' + id);
-        };
+        $scope.loadById = loadService.byId;
     });
