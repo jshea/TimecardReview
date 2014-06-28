@@ -26,7 +26,6 @@ timecardReviewApp.controller('timecardReviewCtrl', function ($scope, $location, 
     $scope.$watch( function() { 
         return $location.path(); // Set a watcher on the path.
     }, function(newPath, oldPath) {  // If path changes we get the newPath and the oldPath.
-
         var cookie = $cookieStore.get('employeenumber'); // Get login cookie.
 
         if ((cookie === undefined) && newPath != '/login') {
@@ -38,4 +37,3 @@ timecardReviewApp.controller('timecardReviewCtrl', function ($scope, $location, 
         $cookieStore.remove('employeenumber'); // Remove cookie on logout.
     }
 });
-
