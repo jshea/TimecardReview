@@ -1,16 +1,24 @@
 [
+    {
+        "employeenumber":      "1",
+        "name":                "Mr. Slate",
+        "login": "mslate"
+    },
     {    
         "manager" : {
             "name":           "Mr. Slate",
+            "login": "mslate",
             "employeenumber": "1",
             "organization":   "Manager - Slate Rock and Gravel Company"
         },
         "employeenumber":      "2",
         "name":                "Flintstone, Fred",
+        "login": "fflintstone",
         "classification":      "Weekly",
         "timecardstatus":      "Complete",
         "reviewed":            true,
         "hasemployees":        false,
+        "org": 2205,
         "ewwauthorized": "No",
         "workweek": "9/80",
         "weekending": "2014-08-24",
@@ -35,15 +43,18 @@
     {   
         "manager" : {
             "name":           "Mr. Slate",
+            "login": "mslate",
             "employeenumber": "1",
             "organization":   "Manager - Slate Rock and Gravel Company"
         },
         "employeenumber":      "3",
         "name":                "Flintstone, Wilma",
+        "login": "wflintstone",
         "classification":      "Hourly",
         "timecardstatus":      "Incomplete",
         "reviewed":            false,
         "hasemployees":        true,
+        "org": 2205,
         "ewwauthorized": "No",
         "workweek": "5/40",
         "weekending": "2014-08-24",
@@ -68,15 +79,18 @@
     {   
         "manager" : {
             "name":           "Mr. Slate",
+            "login": "mslate",
             "employeenumber": "1",
             "organization":   "Manager - Slate Rock and Gravel Company"
         },
         "employeenumber":      "4",
         "name":                "Rubble, Barney",
+        "login": "brubble",
         "classification":      "Weekly",
         "timecardstatus":      "Processed-Complete",
         "reviewed":            true,
         "hasemployees":        false,
+        "org": 2205,
         "ewwauthorized": "No",
         "workweek": "9/80",
         "weekending": "2014-08-24",
@@ -101,15 +115,18 @@
     {
         "manager" : {
             "name":           "Mr. Slate",
+            "login": "mslate",
             "employeenumber": "1",
             "organization":   "Manager - Slate Rock and Gravel Company"
         },
         "employeenumber":      "5",
         "name":                "Rubble, Betty",
+        "login": "berubble",
         "classification":      "Weekly",
         "timecardstatus":      "Processed-Complete",
         "reviewed":            false,
         "hasemployees":        false,
+        "org": 2205,
         "ewwauthorized": "No",
         "workweek": "9/80",
         "weekending": "2014-08-24",
@@ -123,6 +140,78 @@
         ],
         "paidleave": [
             { "paycode": "PCTYO", "commentsrelationship": "None", "hours": [ 0, 0, 0, 0, 0, 0, 0 ] }
+        ],
+        "wams": [
+            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.01", "taskname": "Maintenance",  "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
+            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.02", "taskname": "Enhancements", "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
+            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.03", "taskname": "Bug Fixes",    "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
+            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.1.02", "taskname": "Training & Travel", "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" }
+        ]
+    },
+    {   
+        "manager" : {
+            "name":           "Flintstone, Wilma",
+            "login": "wflintstone",
+            "employeenumber": "3",
+            "organization":   2205
+        },
+        "employeenumber":      "6",
+        "name":                "Durden, Tyler",
+        "login": "tdurden",
+        "classification":      "Weekly",
+        "timecardstatus":      "Complete",
+        "reviewed":            false,
+        "hasemployees":        false,
+        "org": 2215,
+        "ewwauthorized": "Yes",
+        "workweek": "9/80",
+        "weekending": "2014-08-24",
+        "accrual" : {
+            "sick": "14",
+            "vacation": "253",
+            "personalholiday": "135"
+        },
+        "laborhoursdistribution": [
+            { "project": "32419", "task": "22.2.01", "svCode": "SV3353", "userdescription": "Defcon", "percentage": "100", "comments": "None", "hours": [ 9, 9, 9, 9, 8, 0, 0 ] }
+        ],
+        "paidleave": [
+            { "paycode": "PCSIE", "commentsrelationship": "H20", "hours": [ 4, 2, 10, 10, 10, 10, 0 ] }
+        ],
+        "wams": [
+            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.01", "taskname": "Maintenance",  "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
+            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.02", "taskname": "Enhancements", "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
+            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.03", "taskname": "Bug Fixes",    "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
+            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.1.02", "taskname": "Training & Travel", "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" }
+        ]
+    },
+    {   
+        "manager" : {
+            "name":           "Flintstone, Wilma",
+            "login": "wflintstone",
+            "employeenumber": "3",
+            "organization":   2205
+        },
+        "employeenumber":      "7",
+        "name":                "Bower, Jack",
+        "login": "jbower",
+        "classification":      "Hourly",
+        "timecardstatus":      "Incomplete",
+        "reviewed":            true,
+        "hasemployees":        false,
+        "org": 2215,
+        "ewwauthorized": "No",
+        "workweek": "5/40",
+        "weekending": "2014-08-24",
+        "accrual" : {
+            "sick": "140",
+            "vacation": "23",
+            "personalholiday": "345"
+        },
+        "laborhoursdistribution": [
+            { "project": "25940", "task": "22.2.01", "svCode": "SV3353", "userdescription": "Save World", "percentage": "100", "comments": "None", "hours": [ 9, 1, 9, 9, 8, 0, 0 ] }
+        ],
+        "paidleave": [
+            { "paycode": "PC24A", "commentsrelationship": "None", "hours": [ 4, 2, 10, 10, 10, 10, 0 ] }
         ],
         "wams": [
             { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.01", "taskname": "Maintenance",  "from": "9/25/2013", "to": "", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },

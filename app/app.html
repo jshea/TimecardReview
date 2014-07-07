@@ -6,6 +6,9 @@
    <!-- AngularJS. -->
    <script src="js/angular.js"></script>
 
+   <!-- Twilio. -->
+   <script type="text/javascript" src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>
+
    <!-- CSS (Bootstrap). -->
    <link href="css/bootstrap.css" rel="stylesheet" />
    <link href="css/bootstrap-theme.css" rel="stylesheet" />
@@ -19,8 +22,8 @@
    <script src="controllers/timecardReview.js"></script>
 
    <!-- AngularJS Service scripts. -->
-   <script src="services/restService.js"></script>
-   <script src="services/loadService.js"></script>
+   <script src="services/restFactory.js"></script>
+   <script src="services/relocateFactory.js"></script>
 
    <!-- AngularJS Controller scripts. -->
    <script src="controllers/listController.js"></script>
@@ -29,7 +32,6 @@
 </head> <!-- End head. -->
 
 <body ng-controller="timecardReviewCtrl"> <!-- Begin body. -->
-
    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"> <!-- Begin navbar. -->
       <div class="container-fluid"> <!-- Begin container fluid. -->
          <div class="navbar-header"> <!-- Begin navbar header. -->

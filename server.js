@@ -1,22 +1,15 @@
 /*
  * server.js
- *
- * URL's are:
- * 1. GET  ->  /supervisor/:id
- * 2. GET  ->  /employees/:id
- * 3. PUT  ->  /supervisor/:id
- * 4. PUT  ->  /employees/:id
- * 5. PUT  ->  /login/
-*/
+ */
 
 var express = require("express"),
-   methodOverride = require("method-override"),
-   bodyParser = require("body-parser"),
-   app = express(),
-   MongoClient = require("mongodb").MongoClient,
-   Server = require("mongodb").Server,
-   ObjectID = require("mongodb").ObjectID;
-   //ldap = require('ldapjs');
+    twilio = require("twilio"),
+    methodOverride = require("method-override"),
+    bodyParser = require("body-parser"),
+    app = express(),
+    MongoClient = require("mongodb").MongoClient,
+    Server = require("mongodb").Server,
+    ObjectID = require("mongodb").ObjectID;
 
 app.use(express.static(__dirname + '/app')); // Serve static files from the "app" subfolder.
 app.use(methodOverride());                   // Allows use of "put" & "del" methods.
@@ -30,10 +23,10 @@ var db = mongoclient.db("timekeeping");
 var company = require("./data/company.json");
 
 /*
- * Get all employees under a supervisor (and their direct reports).
+ * Get all employees under a supervisor by name.
  */
-app.get("/supervisor/:id", function (req, res) {
-   db.collection("company").find({"manager.employeenumber":req.params.id}).toArray(function (err, doc) {
+app.get("/all/:name", function (req, res) {
+   db.collection("company").find({"manager.login":req.params.name}).toArray(function (err, doc) {
       if (err) {
          throw err;
       } else {
@@ -43,10 +36,10 @@ app.get("/supervisor/:id", function (req, res) {
 });
 
 /*
- * Get an employee.
+ * Get an employee by name.
  */
-app.get("/employees/:id", function (req, res) {
-   db.collection("company").findOne({"employeenumber" : req.params.id}, function (err, doc) {
+app.get("/employee/:name", function (req, res) {
+   db.collection("company").findOne({"login" : req.params.name}, function (err, doc) {
       if (err) {
          throw err;
       } else {
@@ -56,9 +49,9 @@ app.get("/employees/:id", function (req, res) {
 });
 
 /*
- * Update an employee's review status.
+ * Update an employee's review status by name.
  */
-app.put("/employees/:id", function (req, res) {
+app.put("/employee/:name", function (req, res) {
    var company = req.body;
    company._id = new ObjectID(company._id);   // Convert _id to a mongo ObjectID
 
@@ -78,6 +71,20 @@ app.put("/employees/:id", function (req, res) {
 });
 
 /*
+ * Get a Twilio capability token.
+ */
+ app.get("/twilio/token", function (req, res) {
+   var capability = new twilio.Capability(
+      'AC30037cd38213e5b5afa5a4c9665b7a88',
+      '5e1f3b010c74cb9e8894049f513f40b7'
+   );
+
+   capability.allowClientOutgoing('AP20d2dc7d14e2614c92c46516131cc267');
+
+   res.send(capability.generate());
+ });
+
+/*
  * Reset the database. This deletes all data and loads the sample / test data.
  */
 app.get("/reinitialize", function (req, res) {
@@ -91,6 +98,7 @@ app.get("/reinitialize", function (req, res) {
                throw err;
             } else {
                console.dir("Successfully inserted: " + JSON.stringify(result.length) + " documents");
+               res.send({result: "success"});
             }
          });
       }
@@ -104,7 +112,7 @@ app.put("/login/", function (req, res) {
    var uid = req.body.username,
        pw = req.body.password;
 
-   if (uid === "Mr. Slate" && pw === "12345") {
+   if (uid === "mslate" && pw === "12345") {
       res.send("Success");
    }
    else {
