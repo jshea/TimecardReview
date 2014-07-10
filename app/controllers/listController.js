@@ -10,6 +10,6 @@ angular.module('timecardReview')
             $scope.supervisor = data;
         });
 
-        // Get the loadById service in this scope.
+        // Get the loadByName service in this scope.
         $scope.loadByName = locationFactory.toReviewPageByName;
     });
