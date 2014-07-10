@@ -3,10 +3,14 @@
 
       <div class="row"> <!-- Begin row. -->
         <div class="col-sm-3 col-md-2 sidebar"> <!-- Begin sidebar. -->
-            <!--<div align="center"><input type="text" ng-model="searchText" placeholder="Search a Name"></div>
-            <p>-->
             <ul ng-repeat="person in employees | orderBy:'name' | filter:searchText" class="nav nav-sidebar">
-               <li><a href="" class="label label-default" ng-class="labelReviewed(person)" ng-click="loadByName(person.login)">{{person.name}}</a></li>
+               <li><a href="" 
+                      class="label label-default" 
+                      ng-class="person.reviewed ? 'label-success' : 'label-danger'"
+                      ng-click="loadByName(person.login)">
+                      {{person.name}}
+                   </a>
+               </li>
             </ul>
          </div> <!-- End sidebar. -->
       </div> <!-- End row. -->
@@ -16,10 +20,10 @@
          <h4><span class="label label-primary">Timecard Status</span> {{employee.timecardstatus}}</h4>
       </div> <!-- End well. -->
 
-      <div class="well well-sm col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> <!-- Begin well. -->
+      <!--<div class="well well-sm col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
          <button type="button" class="btn btn-warning btn-sm" ng-click="call()">Call This Employee</button>&nbsp;&nbsp;&nbsp;
          <button type="button" class="btn btn-danger btn-sm" ng-click="hangUp()">Hang Up</button>
-      </div>
+      </div>-->
 
       <div class="well well-sm col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> <!-- Begin well. -->
          <label><input type="checkbox" ng_model="employee.reviewed"> Reviewed</label>&nbsp;&nbsp;&nbsp;

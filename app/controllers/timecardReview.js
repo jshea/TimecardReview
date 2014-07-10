@@ -22,20 +22,11 @@ timecardReviewApp.config(function ($routeProvider) {
     });
 });
 
-timecardReviewApp.controller('timecardReviewCtrl', function ($scope, $window, $location, $cookieStore) {
-    $scope.$watch( function() { 
-        return $location.path(); // Set a watcher on the path.
-    }, function(newPath, oldPath) {  // If path changes we get the newPath and the oldPath.
-        var cookie = $cookieStore.get('activeUser'); // Get login cookie.
-
-        if ((cookie === undefined) && newPath != '/login') {
-            $location.path('/login'); // Redirect to login.
-        }
-    });
+timecardReviewApp.controller('timecardReviewCtrl', function ($scope, $cookieStore, locationFactory) {
+    $scope.$watch(locationFactory.getCurrentPathLocation, locationFactory.loginRedirect);
 
     $scope.logOut = function() {
-        $cookieStore.remove('activeUser');
-        $cookieStore.remove('currentSupervisor');
-        $window.location.reload();
+        $cookieStore.remove('activeUser'); // Remove the active user cookie.
+        locationFactory.reloadWindow();
     }
-});
+}); 

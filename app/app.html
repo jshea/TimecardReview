@@ -7,7 +7,7 @@
    <script src="js/angular.js"></script>
 
    <!-- Twilio. -->
-   <script type="text/javascript" src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>
+   <!--<script type="text/javascript" src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>-->
 
    <!-- CSS (Bootstrap). -->
    <link href="css/bootstrap.css" rel="stylesheet" />
@@ -23,7 +23,8 @@
 
    <!-- AngularJS Service scripts. -->
    <script src="services/restFactory.js"></script>
-   <script src="services/relocateFactory.js"></script>
+   <script src="services/locationFactory.js"></script>
+   <!--<script src="services/twilioFactory.js"></script>-->
 
    <!-- AngularJS Controller scripts. -->
    <script src="controllers/listController.js"></script>
@@ -41,7 +42,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand"><font color="#00BFFF">Timecard Review</font></a>
+            <a href="#/list" class="navbar-brand"><font color="#00BFFF">Timecard Review</font></a>
          </div> <!-- End navbar header. -->
          <div class="collapse navbar-collapse"> <!--Begin nav-collapse. -->
             <ul class="nav navbar-nav">
@@ -61,7 +62,6 @@
 
    <!-- Additional scripts at bottom so page loads faster. -->
    <script src="js/jquery-1.11.1.min.js"></script>
-   <script src="js/tab.js"></script>
    <script src="js/bootstrap.js"></script>
 
 </body> <!-- End body. -->

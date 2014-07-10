@@ -1,15 +1,6 @@
 <div ng-controller="listCtrl">
   <div class="well well-sm">
-      <h3><span class="label label-success">Logged In As:</span> {{activeUser}}</h3>
-      <h3 ng-hide="isActive()">
-        <span class="label label-primary">Viewing Supervisor:</span> {{supervisor.name}} 
-        <a href="" ng-click="drillUp()">
-          <span class="label label-warning">
-            <span class="glyphicon glyphicon-chevron-up">
-            </span>
-          </span>
-        </a>
-      </h3>
+      <h3><span class="label label-success">Logged In As:</span> {{supervisor.name}}</h3>
   </div>
 
   <div class="well well-sm">
@@ -30,7 +21,6 @@
                   <th>Classification</th>
                   <th>Timecard Status</th>
                   <th>Vacation Days</th>
-                  <th>Has Employees</th>
               </tr>
           </thead>
           <tbody>
@@ -45,16 +35,6 @@
                   <td>{{person.classification}}</td>
                   <td>{{person.timecardstatus}}</td>
                   <td>{{person.accrual.vacation}}</td>
-                  <td>
-                    <a href="" ng-click="loadNewSupervisor(person.login)">
-                      <div ng-show="person.hasemployees" class="label label-warning">
-                        <span ng-show="person.hasemployees" class="glyphicon glyphicon-chevron-down"></span>
-                      </div>
-                    </a>
-                    <div ng-hide="person.hasemployees" class="label label-default">
-                      <span ng-hide="person.hasemployees" class="glyphicon glyphicon-remove"></span>
-                    </div>
-                  </td>
               </tr>
           </tbody>
         </table>
@@ -74,7 +54,6 @@
                   <th>Classification</th>
                   <th>Timecard Status</th>
                   <th>Vacation Days</th>
-                  <th>Has Employees</th>
               </tr>
           </thead>
           <tbody>
@@ -89,16 +68,6 @@
                   <td>{{person.classification}}</td>
                   <td>{{person.timecardstatus}}</td>
                   <td>{{person.accrual.vacation}}</td>
-                  <td>
-                    <a href="" ng-click="loadNewSupervisor(person.login)">
-                      <div ng-show="person.hasemployees" class="label label-warning">
-                        <span ng-show="person.hasemployees" class="glyphicon glyphicon-chevron-down"></span>
-                      </div>
-                    </a>
-                    <div ng-hide="person.hasemployees" class="label label-default">
-                      <span ng-hide="person.hasemployees" class="glyphicon glyphicon-remove"></span>
-                    </div>
-                  </td>
               </tr>
           </tbody>
         </table>
