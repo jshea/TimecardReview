@@ -9,7 +9,7 @@ angular.module('timecardReview')
             makeCall: function(number) {
                 return function() {
                     Twilio.Device.connect({
-                        CallerId:'+14085983269', // My Twilio number.
+                        CallerId:'', // My Twilio number.
                         PhoneNumber:number // Number to call.
                     });
                 }

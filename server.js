@@ -75,11 +75,11 @@ app.put("/employee/:name", function (req, res) {
  */
  app.get("/twilio/token", function (req, res) {
    var capability = new twilio.Capability(
-      'AC30037cd38213e5b5afa5a4c9665b7a88',
-      '5e1f3b010c74cb9e8894049f513f40b7'
+      '',
+      ''
    );
 
-   capability.allowClientOutgoing('AP20d2dc7d14e2614c92c46516131cc267');
+   capability.allowClientOutgoing('');
 
    res.send(capability.generate());
  });
