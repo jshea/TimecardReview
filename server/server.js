@@ -11,7 +11,7 @@ var express = require("express"),
     Server = require("mongodb").Server,
     ObjectID = require("mongodb").ObjectID;
 
-app.use(express.static(__dirname + '/app')); // Serve static files from the "app" subfolder.
+app.use(express.static(__dirname + '/../app')); // Serve static files from the "app" folder.
 app.use(methodOverride());                   // Allows use of "put" & "del" methods.
 app.use(bodyParser());                       // This clears out rec.body.
 

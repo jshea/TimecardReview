@@ -23,7 +23,7 @@ module.exports = function(config) {
       '../controllers/timecardReview.js',
       '../controllers/*.js',
       '../services/*.js',
-      '../tests/*.js'
+      '../../tests/*.js'
     ],
 
 
