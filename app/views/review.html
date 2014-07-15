@@ -3,9 +3,9 @@
 
       <div class="row"> <!-- Begin row. -->
         <div class="col-sm-3 col-md-2 sidebar"> <!-- Begin sidebar. -->
-            <ul ng-repeat="person in employees | orderBy:'name' | filter:searchText" class="nav nav-sidebar">
+            <ul ng-repeat="person in employees | orderBy:'name'" class="nav nav-sidebar">
                <li><a href="" 
-                      class="label label-default" 
+                      class="label label-default"
                       ng-class="person.reviewed ? 'label-success' : 'label-danger'"
                       ng-click="loadByName(person.login)">
                       {{person.name}}

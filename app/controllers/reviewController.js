@@ -1,5 +1,5 @@
 angular.module('timecardReview')
-    .controller('reviewCtrl', function ($scope, $routeParams, restFactory, locationFactory) {
+    .controller('reviewCtrl', function ($scope, $routeParams, restFactory, locationFactory, $route) {
         // Get all employees under a active supervisor.
         restFactory.getAllEmployeesForActiveUser(function (data) {
             $scope.employees = data;
@@ -17,9 +17,7 @@ angular.module('timecardReview')
                     $scope.employee = data;
                 }
             );
-
-            locationFactory.toReviewPageByName($scope.employee.login); // Change to review page based on login name.
-            locationFactory.reloadWindow(); // Refresh the page.
+            locationFactory.reloadRoute();
         }
 
         // Change to review page based on login name.

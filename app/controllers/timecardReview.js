@@ -27,6 +27,5 @@ timecardReviewApp.controller('timecardReviewCtrl', function ($scope, $cookieStor
 
     $scope.logOut = function() {
         $cookieStore.remove('activeUser'); // Remove the active user cookie.
-        locationFactory.reloadWindow();
     }
-}); 
+});

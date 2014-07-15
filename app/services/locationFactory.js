@@ -1,5 +1,5 @@
 angular.module('timecardReview')
-    .factory('locationFactory', function($location, $window, $cookieStore) {
+    .factory('locationFactory', function($location, $window, $cookieStore, $route) {
         return {
             toReviewPageByName: function (name) {
                 $location.path('/review/' + name); // Change to an employee review page.
@@ -19,6 +19,9 @@ angular.module('timecardReview')
             },
             reloadWindow: function() {
                 $window.location.reload(); // Refresh the page.
+            },
+            reloadRoute: function() {
+                $route.reload(); // Refresh the page.
             }
         }
     });
