@@ -11,7 +11,7 @@ var express = require("express"),
     Server = require("mongodb").Server,
     ObjectID = require("mongodb").ObjectID;
 
-app.use(express.static(__dirname + '/../app')); // Serve static files from the "app" folder.
+app.use(express.static(__dirname + '/../app/www')); // Serve static files from the "app" folder.
 app.use(methodOverride());                   // Allows use of "put" & "del" methods.
 app.use(bodyParser());                       // This clears out rec.body.
 
@@ -22,6 +22,13 @@ var db = mongoclient.db("timekeeping");
 // Load dummy source data from files.
 var company = require("./data/company.json");
 
+// CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
+
 /*
  * Get all employees under a supervisor by name.
  */
@@ -30,7 +37,7 @@ app.get("/all/:name", function (req, res) {
       if (err) {
          throw err;
       } else {
-         res.send(doc);
+        res.send(doc);
       }
    });
 });
