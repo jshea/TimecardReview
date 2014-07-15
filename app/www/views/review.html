@@ -31,15 +31,14 @@
       </div> <!-- End well. -->
 
       <div class="panel col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> <!-- Begin Review panel. -->
-
-         <!-- Begin Review Tab. -->
          <ul id="myTab" class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab">Review</a></li>
+            <li class="active"><a href="#review" data-toggle="tab" target="_blank">Review</a></li>
+            <li><a href="#accruals" data-toggle="tab" target="_blank">Accruals and WAMs</a></li>
          </ul>
          <div id="myTabContent" class="tab-content"> <!-- Begin my tab content. -->
-            <div class="tab-pane fade in active" id="review"> <!-- Begin tab pane. -->
+            <div class="tab-pane fade in active" id="review"> <!-- Begin tab pane fade. -->
                <div class="table-responsive"> <!-- Begin table responsive. -->
-                  <table class="table table-striped">
+                  <table class="table table-striped"> <!-- Begin table. -->
                      <thead>
                         <tr>
                            <th><h4><span class="label label-primary">Labor Hours Distribution</span></h4></th>
@@ -53,20 +52,21 @@
                            <th style="width: 16%">Comments</th>
                         </tr>
                      </thead>
-                  <tbody>
-                     <tr ng-repeat="item in employee.laborhoursdistribution">
-                        <td>{{item.project}}</td>
-                        <td>{{item.task}}</td>
-                        <td>{{item.svCode}}</td>
-                        <td>{{item.userdescription}}</td>
-                        <td>{{item.percentage}}</td>
-                        <td>{{item.comments}}</td>
-                     </tr>
-                  </tbody>
-                  </table>
+                     <tbody>
+                        <tr ng-repeat="item in employee.laborhoursdistribution">
+                           <td>{{item.project}}</td>
+                           <td>{{item.task}}</td>
+                           <td>{{item.svCode}}</td>
+                           <td>{{item.userdescription}}</td>
+                           <td>{{item.percentage}}</td>
+                           <td>{{item.comments}}</td>
+                        </tr>
+                     </tbody>
+                  </table> <!-- End table. -->
                </div> <!-- End table responsive. -->
+
                <div class="table-responsive"> <!-- Begin table responsive. -->
-                  <table class="table table-striped">
+                  <table class="table table-striped"> <!-- Begin table. -->
                      <thead>
                         <tr>
                            <th><h4><span class="label label-primary">Paid Leave</span></h4></th>
@@ -83,6 +83,7 @@
                            <th style="width: 11%">Comments</th>
                         </tr>
                      </thead>
+                     <tbody>
                         <tr ng-repeat="item in employee.paidleave">
                            <td>{{item.paycode}}</td>
                            <td>{{item.hours[0]}}</td>
@@ -94,41 +95,67 @@
                            <td>{{item.hours[6]}}</td>
                            <td>{{item.commentsrelationship}}</td>
                         </tr>
-                     <tbody>
                      </tbody>
-                  </table>
+                  </table> <!-- End table. -->
                </div> <!-- End table responsive. -->
+            </div> <!-- End tab pane fade. -->
+            
+            <div class="tab-pane fade" id="accruals"> <!-- Begin tab pane fade. -->
                <div class="table-responsive"> <!-- Begin table responsive. -->
                   <table class="table table-striped">
                      <thead>
                         <tr>
-                           <th><h4><span class="label label-primary">Accrual</span></h4></th>
+                           <th><h4><span class="label label-primary">Accruals</span></h4></th>
                         </tr>
                         <tr>
-                           <th style="width: 16%">Classification</th>
-                           <th style="width: 16%">Vacation Days</th>
-                           <th style="width: 16%">Personal Holidays</th>
-                           <th style="width: 16%">EWW Authorized</th>
-                           <th style="width: 16%">Sick Days</th>
-                           <th style="width: 16%">Work Week</th>
+                           <th>Classification</th>
+                           <th>Vacation Days</th>
+                           <th>Personal Holidays</th>
+                           <th>EWW Authorized</th>
+                           <th>Sick Days</th>
+                           <th>Work Week</th>
+                        </tr>
+                     </thead>
+                  <tbody>
+                  </tbody>
+                     <tr>
+                        <td>{{employee.classification}}</td>
+                        <td>{{employee.accrual.vacation}}</td>
+                        <td>{{employee.accrual.personalholiday}}</td>
+                        <td>{{employee.ewwauthorized}}</td>
+                        <td>{{employee.accrual.sick}}</td>
+                        <td>{{employee.weekending}}</td>
+                     </tr>
+                  </table>
+               </div> <!-- End table responsive. -->
+
+               <div class="table-responsive"> <!-- Begin table responsive. -->
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+                           <th><h4><span class="label label-primary">WAMs</span></h4></th>
+                        </tr>
+                        <tr>
+                           <th style="width: 20%">Project</th>
+                           <th style="width: 20%">Description</th>
+                           <th style="width: 20%">From</th>
+                           <th style="width: 20%">To</th>
+                           <th style="width: 20%">Chargeable</th>
                         </tr>
                      </thead>
                      <tbody>
-                        <tr>
-                           <td>{{employee.classification}}</td>
-                           <td>{{employee.accrual.vacation}}</td>
-                           <td>{{employee.accrual.personalholiday}}</td>
-                           <td>{{employee.ewwauthorized}}</td>
-                           <td>{{employee.accrual.sick}}</td>
-                           <td>{{employee.weekending}}</td>
+                        <tr ng-repeat="wam in employee.wams">
+                           <td>{{wam.projectnumber}}</td>
+                           <td>{{wam.projectname}}</td>
+                           <td>{{wam.from}}</td>
+                           <td>{{wam.to}}</td>
+                           <td>{{wam.chargeable}}</td>
                         </tr>
                      </tbody>
                   </table>
                </div> <!-- End table responsive. -->
-            </div> <!-- End tab pane. -->
+            </div> <!-- End tab pane fade. -->
          </div> <!-- End my tab content. -->
-         <!-- End Review Tab. -->
-
       </div> <!-- End Review panel. -->
 
    </div> <!-- End fluid container. -->
