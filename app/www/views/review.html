@@ -30,12 +30,14 @@
          <button type="button" class="btn btn-success btn-sm" ng-click="updateReviewed()">Save</button>
       </div> <!-- End well. -->
 
-      <div class="panel col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> <!-- Begin Review panel. -->
+      <div class="panel col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> <!-- Begin Tab panel. -->
          <ul id="myTab" class="nav nav-tabs">
             <li class="active"><a href="#review" data-toggle="tab" target="_blank">Review</a></li>
             <li><a href="#accruals" data-toggle="tab" target="_blank">Accruals and WAMs</a></li>
+            <li><a href="#charts" data-toggle="tab" target="_blank">Charts</a></li>
          </ul>
          <div id="myTabContent" class="tab-content"> <!-- Begin my tab content. -->
+            
             <div class="tab-pane fade in active" id="review"> <!-- Begin tab pane fade. -->
                <div class="table-responsive"> <!-- Begin table responsive. -->
                   <table class="table table-striped"> <!-- Begin table. -->
@@ -155,8 +157,23 @@
                   </table>
                </div> <!-- End table responsive. -->
             </div> <!-- End tab pane fade. -->
+
+            <div class="tab-pane fade" id="charts"> <!-- Begin tab pane fade. -->
+               <div class="row">
+                  <div class="col-md-5">
+                     <h4><span class="label label-primary">Weekly Work Hours Distribution</span></h4>
+                     <br>
+                     <canvas barchart data="weeklyHoursChart" width="300" height="300"></canvas>
+                  </div>
+                  <div class="col-md-5">
+                     <h4><span class="label label-primary">Accruals</span></h4>
+                     <br>
+                     <canvas piechart data="accrualsChart" width="250" height="250"></canvas>
+                  </div>
+               </div>
+            </div> <!-- End tab pane fade. -->
          </div> <!-- End my tab content. -->
-      </div> <!-- End Review panel. -->
+      </div> <!-- End Tab panel. -->
 
    </div> <!-- End fluid container. -->
 

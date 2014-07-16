@@ -1,6 +1,6 @@
 angular.module('timecardReview')
     .factory('restFactory', function($http, $cookieStore) {
-        var baseUrl = 'http://10.99.147.115:3000';
+        var baseUrl = 'http://10.98.145.209:3000';
 
         return {
             getAllEmployeesForActiveUser: function (successCallback) {

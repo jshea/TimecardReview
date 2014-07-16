@@ -1,5 +1,5 @@
 angular.module('timecardReview')
-    .controller('reviewCtrl', function ($scope, $routeParams, restFactory, locationFactory, $route) {
+    .controller('reviewCtrl', function ($scope, $routeParams, restFactory, locationFactory, chartFactory) {
         // Get all employees under a active supervisor.
         restFactory.getAllEmployeesForActiveUser(function (data) {
             $scope.employees = data;
@@ -8,6 +8,8 @@ angular.module('timecardReview')
         // Get a single employee to review.
         restFactory.getEmployeeByUsername($routeParams.name, function (data) {
             $scope.employee = data;
+            $scope.weeklyHoursChart = chartFactory.getWeeklyHoursBarChartData($scope.employee);
+            $scope.accrualsChart = chartFactory.getAccrualsPieChartData($scope.employee);
         });
 
         // Called to update employees reviewed status.

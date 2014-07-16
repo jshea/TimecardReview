@@ -1,4 +1,4 @@
-var timecardReviewApp = angular.module('timecardReview', ['ngRoute', 'ngCookies']);
+var timecardReviewApp = angular.module('timecardReview', ['ngRoute', 'ngCookies', 'angles']);
 
 timecardReviewApp.config(function ($routeProvider) {
     $routeProvider.when('/login', {
