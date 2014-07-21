@@ -1,40 +1,48 @@
 angular.module('timecardReview')
-    .factory('restFactory', function($http, $cookieStore) {
-        var baseUrl = 'http://10.98.145.209:3000';
-
+    .factory('restFactory', function($rootScope, $http, URL) {
         return {
-            getAllEmployeesForActiveUser: function (successCallback) {
+            getAllEmployeesForActiveManager: function (successCallback) {
                 //var url = baseUrl + '/all/' + $cookieStore.get('activeUser');
-                var url = baseUrl + '/all/' + 'mslate';
+                var url = URL + '/all/mslate';
 
-                return $http.get(url).success(successCallback).error(function (error) {
-                    console.log('restFactory.getAllEmployeesForActiveUser() Error: ' + error);
-                });
+                if ($rootScope.online) {
+                    $http.get(url).success(successCallback).error(function (data, status, headers, config) {
+                        console.log('restFactory.getAllEmployeesForActiveManager() Error: ' + data);
+                    });
+                }
+                else { // We are off-line.
+                    localforage.getItem(url, successCallback);   
+                }
             },
             getEmployeeByUsername: function (name, successCallback) {
-                var url = baseUrl + '/employee/' + name;
+                var url = URL + '/employee/' + name;
 
-                return $http.get(url).success(successCallback).error(function (error) {
-                    console.log('restFactory.getEmployeeByUsername() Error: ' + error);
+                $http.get(url).success(successCallback).error(function (data, status, headers, config) {
+                    console.log('restFactory.getEmployeeByUsername() Error: ' + data);
                 });
             },
-            getActiveEmployee: function (successCallback) {
+            getActiveManager: function (successCallback) {
                 //var url = baseUrl + '/employee/' + $cookieStore.get('activeUser');
-                var url = baseUrl + '/employee/' + 'mslate';
+                var url = URL + '/employee/mslate';
 
-                return $http.get(url).success(successCallback).error(function (error) {
-                    console.log('restFactory.getActiveEmployee() Error: ' + error);
-                });
+                if ($rootScope.online) {
+                    $http.get(url).success(successCallback).error(function (data, status, headers, config) {
+                        console.log('restFactory.getActiveManager() Error: ' + data);
+                    });
+                }
+                else {
+                    localforage.getItem(url, successCallback);
+                }
             },
             updateEmployeeByUsername: function(name, data, successCallback) {
-                var url = baseUrl + '/employee/' + name;
+                var url = URL + '/employee/' + name;
 
-                return $http.put(url, data).success(successCallback).error(function (error) {
-                    console.log('restFactory.updateEmployeeByUsername() Error: ' + error);
+                $http.put(url, data).success(successCallback).error(function (data, status, headers, config) {
+                    console.log('restFactory.updateEmployeeByUsername() Error: ' + data);
                 });
             },
             loginWithCred: function (credentials, successCallback, errorCallback) {
-                return $http.put(baseUrl + '/login/', credentials).success(successCallback).error(errorCallback);
+                $http.put(URL + '/login/', credentials).success(successCallback).error(errorCallback);
             }
         }
     });

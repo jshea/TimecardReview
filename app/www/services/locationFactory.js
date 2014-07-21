@@ -1,5 +1,5 @@
 angular.module('timecardReview')
-    .factory('locationFactory', function($location, $window, $cookieStore, $route) {
+    .factory('locationFactory', function($location, $window, $route) {
         return {
             toReviewPageByName: function (name) {
                 $location.path('/review/' + name); // Change to an employee review page.
@@ -8,7 +8,7 @@ angular.module('timecardReview')
                 $location.path('/list'); // Change to list page.
             },
             loginRedirect: function(newPath, oldPath) {
-                var cookie = $cookieStore.get('activeUser'); // Get login cookie.
+                //var cookie = $cookieStore.get('activeUser'); // Get login cookie.
 
                 if ((cookie === undefined) && newPath != '/login') {
                     $location.path('/login'); // Redirect to login.

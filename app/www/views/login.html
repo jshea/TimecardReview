@@ -1,6 +1,11 @@
+
 <div class="well" ng-controller="loginCtrl">
 
-    <div class="alert alert-info" ng-hide="authenticationError">
+    <div class="alert alert-danger" ng-show="!online">
+        Please connect to the Internet to Log In.
+    </div>
+
+    <div class="alert alert-info" ng-hide="authenticationError || !online">
         Please enter your username and password, then click Log In to authenticate.
     </div>
 
@@ -18,7 +23,7 @@
             <input name="password" type="password" class="form-control" ng-model="password" required />
         </div>
         <div class="text-center">
-            <button ng-click="login(username, password)" ng-disabled="authForm.$invalid" class="btn btn-primary">
+            <button ng-click="login(username, password)" ng-disabled="authForm.$invalid || !online" class="btn btn-primary">
                 Log In
             </button>
         </div>

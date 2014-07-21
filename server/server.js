@@ -33,7 +33,7 @@ app.all('*', function(req, res, next) {
  * Get all employees under a supervisor by name.
  */
 app.get("/all/:name", function (req, res) {
-   db.collection("company").find({"manager.login":req.params.name}).toArray(function (err, doc) {
+   db.collection("company").find({"manager.userName":req.params.name}).toArray(function (err, doc) {
       if (err) {
          throw err;
       } else {
@@ -46,7 +46,7 @@ app.get("/all/:name", function (req, res) {
  * Get an employee by name.
  */
 app.get("/employee/:name", function (req, res) {
-   db.collection("company").findOne({"login" : req.params.name}, function (err, doc) {
+   db.collection("company").findOne({"userName" : req.params.name}, function (err, doc) {
       if (err) {
          throw err;
       } else {

@@ -1,4 +1,4 @@
-var timecardReviewApp = angular.module('timecardReview', ['ngRoute', 'ngCookies']);
+var timecardReviewApp = angular.module('timecardReview', ['ngRoute', 'angles', 'ngCsv']);
 
 timecardReviewApp.config(function ($routeProvider) {
     $routeProvider.when('/login', {
@@ -22,7 +22,7 @@ timecardReviewApp.config(function ($routeProvider) {
     });
 });
 
-timecardReviewApp.controller('timecardReviewCtrl', function ($scope, $cookieStore, locationFactory) {
+timecardReviewApp.controller('timecardReviewCtrl', function ($scope, locationFactory) {
     //$scope.$watch(locationFactory.getCurrentPathLocation, locationFactory.loginRedirect);
 
     $scope.logOut = function() {

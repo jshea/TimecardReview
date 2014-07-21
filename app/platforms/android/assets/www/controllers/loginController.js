@@ -1,5 +1,5 @@
 angular.module('timecardReview')
-    .controller('loginCtrl', function($scope, $cookieStore, restFactory, locationFactory) {
+    .controller('loginCtrl', function($scope, restFactory, locationFactory) {
         // Login function activated when a user clicks Log In.
         $scope.login = function (user, pass) {
             restFactory.loginWithCred({username: user, password: pass}, 

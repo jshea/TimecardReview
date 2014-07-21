@@ -1,151 +1,44 @@
 [
     {
-        "employeenumber":      "1",
-        "name":                "Mr. Slate",
-        "login": "mslate"
-    },
-    {    
-        "manager" : {
-            "name":           "Mr. Slate",
-            "login": "mslate",
-            "employeenumber": "1",
-            "organization":   "Manager - Slate Rock and Gravel Company"
-        },
-        "employeenumber":      "2",
-        "name":                "Flintstone, Fred",
-        "login": "fflintstone",
-        "classification":      "Weekly",
-        "timecardstatus":      "Complete",
-        "reviewed":            true,
-        "hasemployees":        false,
-        "org": 2205,
-        "ewwauthorized": "No",
-        "workweek": "9/80",
-        "weekending": "2014-08-24",
-        "accrual" : {
-            "sick": 123,
-            "vacation": 456,
-            "personalholiday": 8
-        },
-        "laborhoursdistribution": [
-            { "project": "123456", "task": "22.2.01", "svCode": "SV1123", "userdescription": "Robotics", "percentage": "100", "comments": "None", "hours": [ 10, 5, 10, 5, 5, 3, 2 ] }
-        ],
-        "paidleave": [
-            { "paycode": "PCABD", "commentsrelationship": "Cash", "hours": [ 1, 2, 3, 4, 5, 6, 7 ] }
-        ],
-        "wams": [
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.01", "taskname": "Maintenance",  "from": "9/25/2013", "to": "10/25/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.02", "taskname": "Enhancements", "from": "9/25/2013", "to": "11/25/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.03", "taskname": "Bug Fixes",    "from": "9/25/2013", "to": "12/25/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.1.02", "taskname": "Training & Travel", "from": "9/25/2013", "to": "1/25/2014", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" }
-        ]
-    },
-    {   
-        "manager" : {
-            "name":           "Mr. Slate",
-            "login": "mslate",
-            "employeenumber": "1",
-            "organization":   "Manager - Slate Rock and Gravel Company"
-        },
-        "employeenumber":      "3",
-        "name":                "Flintstone, Wilma",
-        "login": "wflintstone",
-        "classification":      "Hourly",
-        "timecardstatus":      "Incomplete",
-        "reviewed":            false,
-        "hasemployees":        true,
-        "org": 2205,
-        "ewwauthorized": "No",
-        "workweek": "5/40",
-        "weekending": "2014-08-24",
-        "accrual" : {
-            "sick": 34,
-            "vacation": 206,
-            "personalholiday": 70
-        },
-        "laborhoursdistribution": [
-            { "project": "123456", "task": "22.2.01", "svCode": "SV3353", "userdescription": "DBMS", "percentage": "100", "comments": "None", "hours": [2, 4, 8, 16, 8, 5, 5] }
-        ],
-        "paidleave": [
-            { "paycode": "PCEDF", "commentsrelationship": "Macintosh", "hours": [ 7, 6, 5, 4, 3, 2, 1 ] }
-        ],
-        "wams": [
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.01", "taskname": "Maintenance",  "from": "9/25/2013", "to": "10/4/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.02", "taskname": "Enhancements", "from": "9/25/2013", "to": "11/14/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.03", "taskname": "Bug Fixes",    "from": "9/25/2013", "to": "9/4/2014", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.1.02", "taskname": "Training & Travel", "from": "9/25/2013", "to": "10/14/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" }
-        ]
-    },
-    {   
-        "manager" : {
-            "name":           "Mr. Slate",
-            "login": "mslate",
-            "employeenumber": "1",
-            "organization":   "Manager - Slate Rock and Gravel Company"
-        },
-        "employeenumber":      "4",
-        "name":                "Rubble, Barney",
-        "login": "brubble",
-        "classification":      "Weekly",
-        "timecardstatus":      "Complete",
-        "reviewed":            true,
-        "hasemployees":        false,
-        "org": 2205,
-        "ewwauthorized": "No",
-        "workweek": "9/80",
-        "weekending": "2014-08-24",
-        "accrual" : {
-            "sick": 98,
-            "vacation": 154,
-            "personalholiday": 215
-        },
-        "laborhoursdistribution": [
-            { "project": "123456", "task": "22.2.01", "svCode": "SV3593", "userdescription": "AngularJS", "percentage": "100", "comments": "None", "hours": [ 1, 1, 3, 5, 8, 13, 21 ] }
-        ],
-        "paidleave": [
-            { "paycode": "PCEKG", "commentsrelationship": "None", "hours": [ 5, 10, 15, 20, 25, 30, 35 ] }
-        ],
-        "wams": [
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.01", "taskname": "Maintenance",  "from": "9/25/2013", "to": "9/27/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.02", "taskname": "Enhancements", "from": "9/25/2013", "to": "9/27/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.03", "taskname": "Bug Fixes",    "from": "9/25/2013", "to": "9/27/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.1.02", "taskname": "Training & Travel", "from": "9/25/2013", "to": "9/27/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" }
-        ]
+        "firstName": "Sylvester",
+        "lastName": "Slate",
+        "userName": "mslate",
+        "employeeNumber": 1,
+        "orgNumber": 2205
     },
     {
-        "manager" : {
-            "name":           "Mr. Slate",
-            "login": "mslate",
-            "employeenumber": "1",
-            "organization":   "Manager - Slate Rock and Gravel Company"
+        "firstName": "Fred",
+        "lastName": "Flintstone",
+        "userName": "fflintstone",
+        "employeeNumber": 2,
+        "orgNumber": 2205,
+        "workWeek": "9/80",
+        "weekEnding": "2014-07-16",
+        "timeClass": "Weekly",
+        "timeCardStatus": "Complete",
+        "timeCardReviewed": true,
+        "accruals": {
+            "vacation": 234,
+            "holiday": 95,
+            "sick": 123
         },
-        "employeenumber":      "5",
-        "name":                "Rubble, Betty",
-        "login": "berubble",
-        "classification":      "Weekly",
-        "timecardstatus":      "Incomplete",
-        "reviewed":            false,
-        "hasemployees":        false,
-        "org": 2205,
-        "ewwauthorized": "No",
-        "workweek": "9/80",
-        "weekending": "2014-08-24",
-        "accrual" : {
-            "sick": 152,
-            "vacation": 364,
-            "personalholiday": 101
-        },
-        "laborhoursdistribution": [
-            { "project": "123456", "task": "22.2.01", "svCode": "SV3050", "userdescription": "Node.js", "percentage": "100", "comments": "None", "hours": [ 9, 8, 7, 6, 5, 4, 3 ] }
+        "laborHoursDist": [
+            { "projectNumber": 112358, "projectName": "Project X", "task": "22.2.01", "svCode": "SV3353", "description": "AngularJS", "percentage": 100, "comments": "Superheroic Web Framework", "hours": [8, 9, 11, 7, 5, 0, 0] },
+            { "projectNumber": 161548, "projectName": "Occupy Mars", "task": "22.3.01", "svCode": "SV4453", "description": "Node.js", "percentage":100, "comments": "JavaScript Rules", "hours": [10, 3, 2, 5, 9, 0, 0] }
         ],
-        "paidleave": [
-            { "paycode": "PCTYO", "commentsrelationship": "None", "hours": [ 4, 8, 15, 16, 23, 42, 0 ] }
+        "paidLeave": [
+            { "payCode": "PCEKG", "hours": [10, 10, 10, 5, 5, 0, 0], "comments": "Bahamas" },
+            { "payCode": "PCCBA", "hours": [5, 15, 10, 8, 2, 0, 0], "comments": "Jupiter" }
         ],
         "wams": [
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.01", "taskname": "Maintenance",  "from": "9/25/2013", "to": "9/26/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.02", "taskname": "Enhancements", "from": "9/25/2013", "to": "9/26/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.2.03", "taskname": "Bug Fixes",    "from": "9/25/2013", "to": "9/26/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" },
-            { "projectnumber": "123456", "projectname": "Quarry", "tasknumber": "22.1.02", "taskname": "Training & Travel", "from": "9/25/2013", "to": "9/26/2013", "chargeable": "Y", "lastupdateby": "Coryell, Cindy" }
-        ]
+            { "projectNumber": 112358, "projectName": "Project X", "from": "2014-07-16", "to": "2014-07-22", "chargeable": "Yes" },
+            { "projectNumber": 161548, "projectName": "Occupy Mars", "from": "2014-07-16", "to": "2015-08-9", "chargeable": "Yes" }
+        ],
+        "manager": {
+            "firstName": "Sylvester",
+            "lastName": "Slate",
+            "userName": "mslate",
+            "employeeNumber": 1
+        }
     }
 ]

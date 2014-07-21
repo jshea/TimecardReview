@@ -4,10 +4,10 @@ describe("restFactory Test", function () {
     
     beforeEach(angular.mock.module("timecardReview")); // Create mock Timecard Review module.
 
-    beforeEach(angular.mock.inject(function (restFactory, $httpBackend, $cookieStore) {
+    beforeEach(angular.mock.inject(function (restFactory, $httpBackend) {
         service = restFactory;
         backend = $httpBackend;
-        $cookieStore.put('activeUser', 'username'); // Set up our login cookie.
+        //$cookieStore.put('activeUser', 'username'); // Set up our login cookie.
     }));
 
     // Act & Assert.
@@ -20,9 +20,9 @@ describe("restFactory Test", function () {
     });
 
     it('should getAllEmployeesForActiveUser', function() {
-        backend.expect('GET', '/all/username').respond([{'username':'mslate'}]); // Mock request.
+        backend.expect('GET', 'http://localhost:3000/all/mslate').respond([{'username':'mslate'}]); // Mock request.
 
-        service.getAllEmployeesForActiveUser(function(data) { // Call our function.
+        service.getAllEmployeesForActiveManager(function(data) { // Call our function.
             expect(data).toBeDefined(); // Make sure response is defined.
             expect(data[0].username).toEqual('mslate'); // Verify we receive our mock data correctly.
         });

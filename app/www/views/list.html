@@ -1,6 +1,6 @@
 <div ng-controller="listCtrl">
   <div class="well well-sm">
-      <h3><span class="label label-success">Logged In As:</span> {{supervisor.name}}</h3>
+      <h3><span class="label label-success">Logged In As:</span> {{manager.firstName}} {{manager.lastName}}</h3>
   </div>
 
   <div class="well well-sm">
@@ -19,23 +19,25 @@
                   <th>Name</th>
                   <th>Organization</th>
                   <th>Classification</th>
+                  <th>Week Ending</th>
                   <th>Timecard Status</th>
                   <th>Vacation Days</th>
               </tr>
           </thead>
           <tbody>
-              <tr ng-repeat="person in employees | filter:{reviewed:false} | filter:searchText">
-                  <td>
-                    <a href="" ng-click="loadByName(person.login)">
-                      <div class="label label-info">
-                        <span class="glyphicon glyphicon-user"></span></div>  {{person.name}}
-                    </a>
-                  </td>
-                  <td>{{person.org}}</td>
-                  <td>{{person.classification}}</td>
-                  <td>{{person.timecardstatus}}</td>
-                  <td>{{person.accrual.vacation}}</td>
-              </tr>
+            <tr ng-repeat="employee in employees | filter:{timeCardReviewed:false} | filter:searchText">
+              <td>
+                <a href="" ng-click="loadByName(employee.userName)">
+                  <div class="label label-info">
+                    <span class="glyphicon glyphicon-user"></span></div>  {{employee.firstName}} {{employee.lastName}}
+                </a>
+              </td>
+              <td>{{employee.orgNumber}}</td>
+              <td>{{employee.timeClass}}</td>
+              <td>{{employee.weekEnding}}</td>
+              <td>{{employee.timeCardStatus}}</td>
+              <td>{{employee.accruals.vacation}}</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -52,22 +54,24 @@
                   <th>Name</th>
                   <th>Organization</th>
                   <th>Classification</th>
+                  <th>Week Ending</th>
                   <th>Timecard Status</th>
                   <th>Vacation Days</th>
               </tr>
           </thead>
           <tbody>
-              <tr ng-repeat="person in employees | filter:{reviewed:true} | filter:searchText">
-                  <td>
-                    <a href="" ng-click="loadByName(person.login)">
-                      <div class="label label-info">
-                        <span class="glyphicon glyphicon-user"></span></div>  {{person.name}}
-                    </a>
-                  </td>
-                  <td>{{person.org}}</td>
-                  <td>{{person.classification}}</td>
-                  <td>{{person.timecardstatus}}</td>
-                  <td>{{person.accrual.vacation}}</td>
+              <tr ng-repeat="employee in employees | filter:{timeCardReviewed:true} | filter:searchText">
+                <td>
+                  <a href="" ng-click="loadByName(employee.userName)">
+                    <div class="label label-info">
+                      <span class="glyphicon glyphicon-user"></span></div>  {{employee.firstName}} {{employee.lastName}}
+                  </a>
+                </td>
+                <td>{{employee.orgNumber}}</td>
+                <td>{{employee.timeClass}}</td>
+                <td>{{employee.weekEnding}}</td>
+                <td>{{employee.timeCardStatus}}</td>
+                <td>{{employee.accruals.vacation}}</td>
               </tr>
           </tbody>
         </table>

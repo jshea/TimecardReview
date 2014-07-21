@@ -3,12 +3,12 @@
 
       <div class="row"> <!-- Begin row. -->
         <div class="col-sm-3 col-md-2 sidebar"> <!-- Begin sidebar. -->
-            <ul ng-repeat="person in employees | orderBy:'name'" class="nav nav-sidebar">
+            <ul ng-repeat="employee in employees | orderBy:'name'" class="nav nav-sidebar">
                <li><a href="" 
                       class="label label-default"
-                      ng-class="person.reviewed ? 'label-success' : 'label-danger'"
-                      ng-click="loadByName(person.login)">
-                      {{person.name}}
+                      ng-class="employee.timeCardReviewed ? 'label-success' : 'label-danger'"
+                      ng-click="loadByName(employee.userName)">
+                      {{employee.firstName}} {{employee.lastName}}
                    </a>
                </li>
             </ul>
@@ -16,8 +16,8 @@
       </div> <!-- End row. -->
 
       <div class="well well-sm col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> <!-- Begin well. -->
-         <h4><span class="label label-primary">Employee Name</span> {{employee.name}}</h4>
-         <h4><span class="label label-primary">Timecard Status</span> {{employee.timecardstatus}}</h4>
+         <h4><span class="label label-primary">Employee Name</span> {{employee.firstName}} {{employee.lastName}}</h4>
+         <h4><span class="label label-primary">Timecard Status</span> {{employee.timeCardStatus}}</h4>
       </div> <!-- End well. -->
 
       <!--<div class="well well-sm col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -26,7 +26,7 @@
       </div>-->
 
       <div class="well well-sm col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> <!-- Begin well. -->
-         <label><input type="checkbox" ng_model="employee.reviewed"> Reviewed</label>&nbsp;&nbsp;&nbsp;
+         <label><input type="checkbox" ng_model="employee.timeCardReviewed"> Reviewed</label>&nbsp;&nbsp;&nbsp;
          <button type="button" class="btn btn-success btn-sm" ng-click="updateReviewed()">Save</button>
       </div> <!-- End well. -->
 
@@ -35,6 +35,7 @@
             <li class="active"><a href="#review" data-toggle="tab" target="_blank">Review</a></li>
             <li><a href="#accruals" data-toggle="tab" target="_blank">Accruals and WAMs</a></li>
             <li><a href="#charts" data-toggle="tab" target="_blank">Charts</a></li>
+            <li><a href="#export" data-toggle="tab" target="_blank">Export</a></li>
          </ul>
          <div id="myTabContent" class="tab-content"> <!-- Begin my tab content. -->
             
@@ -47,6 +48,7 @@
                         </tr>
                         <tr>
                            <th style="width: 16%">Project</th>
+                           <th style="width: 16%">Name</th>
                            <th style="width: 16%">Task</th>
                            <th style="width: 16%">SV Code</th>
                            <th style="width: 16%">Description</th>
@@ -55,11 +57,12 @@
                         </tr>
                      </thead>
                      <tbody>
-                        <tr ng-repeat="item in employee.laborhoursdistribution">
-                           <td>{{item.project}}</td>
+                        <tr ng-repeat="item in employee.laborHoursDist">
+                           <td>{{item.projectNumber}}</td>
+                           <td>{{item.projectName}}</td>
                            <td>{{item.task}}</td>
                            <td>{{item.svCode}}</td>
-                           <td>{{item.userdescription}}</td>
+                           <td>{{item.description}}</td>
                            <td>{{item.percentage}}</td>
                            <td>{{item.comments}}</td>
                         </tr>
@@ -86,8 +89,8 @@
                         </tr>
                      </thead>
                      <tbody>
-                        <tr ng-repeat="item in employee.paidleave">
-                           <td>{{item.paycode}}</td>
+                        <tr ng-repeat="item in employee.paidLeave">
+                           <td>{{item.payCode}}</td>
                            <td>{{item.hours[0]}}</td>
                            <td>{{item.hours[1]}}</td>
                            <td>{{item.hours[2]}}</td>
@@ -95,7 +98,7 @@
                            <td>{{item.hours[4]}}</td>
                            <td>{{item.hours[5]}}</td>
                            <td>{{item.hours[6]}}</td>
-                           <td>{{item.commentsrelationship}}</td>
+                           <td>{{item.comments}}</td>
                         </tr>
                      </tbody>
                   </table> <!-- End table. -->
@@ -110,23 +113,17 @@
                            <th><h4><span class="label label-primary">Accruals</span></h4></th>
                         </tr>
                         <tr>
-                           <th>Classification</th>
                            <th>Vacation Days</th>
                            <th>Personal Holidays</th>
-                           <th>EWW Authorized</th>
                            <th>Sick Days</th>
-                           <th>Work Week</th>
                         </tr>
                      </thead>
                   <tbody>
                   </tbody>
                      <tr>
-                        <td>{{employee.classification}}</td>
-                        <td>{{employee.accrual.vacation}}</td>
-                        <td>{{employee.accrual.personalholiday}}</td>
-                        <td>{{employee.ewwauthorized}}</td>
-                        <td>{{employee.accrual.sick}}</td>
-                        <td>{{employee.weekending}}</td>
+                        <td>{{employee.accruals.vacation}}</td>
+                        <td>{{employee.accruals.holiday}}</td>
+                        <td>{{employee.accruals.sick}}</td>
                      </tr>
                   </table>
                </div> <!-- End table responsive. -->
@@ -139,7 +136,7 @@
                         </tr>
                         <tr>
                            <th style="width: 20%">Project</th>
-                           <th style="width: 20%">Description</th>
+                           <th style="width: 20%">Name</th>
                            <th style="width: 20%">From</th>
                            <th style="width: 20%">To</th>
                            <th style="width: 20%">Chargeable</th>
@@ -147,8 +144,8 @@
                      </thead>
                      <tbody>
                         <tr ng-repeat="wam in employee.wams">
-                           <td>{{wam.projectnumber}}</td>
-                           <td>{{wam.projectname}}</td>
+                           <td>{{wam.projectNumber}}</td>
+                           <td>{{wam.projectName}}</td>
                            <td>{{wam.from}}</td>
                            <td>{{wam.to}}</td>
                            <td>{{wam.chargeable}}</td>
@@ -172,6 +169,14 @@
                   </div>
                </div>
             </div> <!-- End tab pane fade. -->
+
+            <div class="tab-pane fade" id="export"> <!-- Begin tab pane fade. -->
+               <div class="well">
+                  <!--<button type="button" class="btn btn-primary btn-lg" ng-click="">PDF</button>&nbsp;&nbsp;&nbsp;-->
+                  <button type="button" class="btn btn-primary btn-lg" ng-csv="getCsvEmployee(employee)" filename="employee.csv">CSV</button>
+               </div>
+            </div> <!-- End tab pane fade. -->
+
          </div> <!-- End my tab content. -->
       </div> <!-- End Tab panel. -->
 
