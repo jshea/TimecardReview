@@ -39,6 +39,8 @@
             "lastName": "Slate",
             "userName": "mslate",
             "employeeNumber": 1
-        }
+        },
+        "isDirty": false,
+        "version": 0
     }
 ]

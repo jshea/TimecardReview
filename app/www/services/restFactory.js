@@ -1,18 +1,13 @@
 angular.module('timecardReview')
-    .factory('restFactory', function($rootScope, $http, URL) {
+    .factory('restFactory', function($http, URL) {
         return {
             getAllEmployeesForActiveManager: function (successCallback) {
                 //var url = baseUrl + '/all/' + $cookieStore.get('activeUser');
                 var url = URL + '/all/mslate';
 
-                if ($rootScope.online) {
-                    $http.get(url).success(successCallback).error(function (data, status, headers, config) {
-                        console.log('restFactory.getAllEmployeesForActiveManager() Error: ' + data);
-                    });
-                }
-                else { // We are off-line.
-                    localforage.getItem(url, successCallback);   
-                }
+                $http.get(url).success(successCallback).error(function (data, status, headers, config) {
+                    console.log('restFactory.getAllEmployeesForActiveManager() Error: ' + data);
+                });
             },
             getEmployeeByUsername: function (name, successCallback) {
                 var url = URL + '/employee/' + name;
@@ -25,14 +20,9 @@ angular.module('timecardReview')
                 //var url = baseUrl + '/employee/' + $cookieStore.get('activeUser');
                 var url = URL + '/employee/mslate';
 
-                if ($rootScope.online) {
-                    $http.get(url).success(successCallback).error(function (data, status, headers, config) {
-                        console.log('restFactory.getActiveManager() Error: ' + data);
-                    });
-                }
-                else {
-                    localforage.getItem(url, successCallback);
-                }
+                $http.get(url).success(successCallback).error(function (data, status, headers, config) {
+                    console.log('restFactory.getActiveManager() Error: ' + data);
+                });
             },
             updateEmployeeByUsername: function(name, data, successCallback) {
                 var url = URL + '/employee/' + name;

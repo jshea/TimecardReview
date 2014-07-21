@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="timecardReview"> <!-- Begin html. -->
+<html lang="en" ng-app="timecardReview" manifest="TimecardReview.appcache"> <!-- Begin html. -->
    <head> <!-- Begin head. -->
       <title>Timecard Review</title>
 
@@ -17,7 +17,6 @@
       <!-- AngularJS helper scripts. -->
       <script src="js/angular-route.js"></script>
       <script src="js/angular-sanitize.js"></script>
-      <!--<script src="js/angular-cookies.js"></script>-->
 
       <!-- AngularJS 'Top-Level' Controller. -->
       <script src="controllers/timecardReview.js"></script>
@@ -28,6 +27,7 @@
       <!--<script src="services/twilioFactory.js"></script>-->
       <script src="services/chartFactory.js"></script>
       <script src="services/exportFactory.js"></script>
+      <script src="services/forageFactory.js"></script>
 
       <!-- AngularJS Controller scripts. -->
       <script src="controllers/listController.js"></script>
@@ -35,7 +35,7 @@
       <script src="controllers/loginController.js"></script>
    </head> <!-- End head. -->
 
-   <body ng-controller="timecardReviewCtrl"> <!-- Begin body. -->
+   <body ng-controller="timecardReviewCtrl" ng-cloak> <!-- Begin body. -->
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"> <!-- Begin navbar. -->
          <div class="container-fluid"> <!-- Begin container fluid. -->
             <div class="navbar-header"> <!-- Begin navbar header. -->

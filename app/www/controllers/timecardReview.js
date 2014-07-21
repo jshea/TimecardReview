@@ -29,13 +29,16 @@ timecardReviewApp.run(function($window, $rootScope) {
 
     $window.addEventListener("offline", function () {
         $rootScope.$apply(function() {
-          $rootScope.online = false;
+            $rootScope.online = false;
         });
     }, false);
 
     $window.addEventListener("online", function () {
         $rootScope.$apply(function() {
-          $rootScope.online = true;
+            if (!$rootScope.online) {
+                // Push dirty data.
+            }
+            $rootScope.online = true;
         });
     }, false);
 });
