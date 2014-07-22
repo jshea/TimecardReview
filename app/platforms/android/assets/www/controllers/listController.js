@@ -1,13 +1,10 @@
 angular.module('timecardReview')
-    .controller('listCtrl', function ($scope, restFactory, locationFactory) {
-        // Get all employees under active supervisor.
+    .controller('listCtrl', function ($scope, URL, restFactory, locationFactory) {
         restFactory.getAllEmployeesForActiveManager(function (data) {
             $scope.employees = data;
-        });
 
-        // Call a REST service to get a supervisors data.
-        restFactory.getActiveManager(function (data) {
-            $scope.manager = data;
+            if ($scope.online) localforage.setItem(URL + '/all/' + data[0].manager.userName, data);
+            else $scope.$digest();
         });
 
         // Get the loadByName service in this scope.

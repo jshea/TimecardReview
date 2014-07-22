@@ -38,6 +38,7 @@
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/plugins \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/services \
+/Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/TimecardReview.appcache \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/views \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/controllers/listController.js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/controllers/loginController.js \
@@ -51,7 +52,7 @@
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/fonts/glyphicons-halflings-regular.ttf \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/fonts/glyphicons-halflings-regular.woff \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/js/angles.js \
-/Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/js/angular-cookies.js \
+/Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/js/angular-localForage.min.js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/js/angular-mocks.js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/js/angular-route.js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/js/angular-sanitize.js \
@@ -60,11 +61,15 @@
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/js/chart.js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/js/jquery-1.11.1.min.js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/js/karma.config.js \
+/Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/js/localforage.min.js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/js/ng-csv.js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/services/chartFactory.js \
+/Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/services/exportFactory.js \
+/Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/services/forageFactory.js \
+/Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/services/httpFactory.js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/services/locationFactory.js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/services/restFactory.js \
 /Users/chriscamargo/JPL/TimecardReview/app/platforms/android/assets/www/services/twilioFactory.js \

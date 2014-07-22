@@ -1,12 +1,6 @@
 [
     {
-        "firstName": "Sylvester",
-        "lastName": "Slate",
-        "userName": "mslate",
-        "employeeNumber": 1,
-        "orgNumber": 2205
-    },
-    {
+        "index": 0,
         "firstName": "Fred",
         "lastName": "Flintstone",
         "userName": "fflintstone",

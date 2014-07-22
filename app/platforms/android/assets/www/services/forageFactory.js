@@ -1,7 +1,7 @@
 angular.module('timecardReview')
-    .factory('forageFactory', function($rootScope, URL) {
+    .factory('forageFactory', function(URL) {
         // These functions should only be called in the case that the application is off-line.
-        var url = URL + '/all/' + $rootScope.activeManager; // TO DO: Replace with login cookie user information.
+        var url = URL + '/all/mslate'; // TO DO: Replace with login cookie user information.
         return {
             getAllEmployeesForActiveManager: function (successCallback) {
                 localforage.getItem(url, successCallback); 

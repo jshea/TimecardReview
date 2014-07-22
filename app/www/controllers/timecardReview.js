@@ -24,7 +24,7 @@ timecardReviewApp.config(function ($routeProvider) {
 
 timecardReviewApp.constant('URL', 'http://localhost:3000');
 
-timecardReviewApp.run(function($window, $rootScope) {
+timecardReviewApp.run(function($window, $rootScope, restFactory) {
     $rootScope.online = navigator.onLine;
 
     $window.addEventListener("offline", function () {
@@ -36,17 +36,18 @@ timecardReviewApp.run(function($window, $rootScope) {
     $window.addEventListener("online", function () {
         $rootScope.$apply(function() {
             if (!$rootScope.online) {
-                // Push dirty data.
+                restFactory.updateDirtyEmployees();
             }
             $rootScope.online = true;
         });
     }, false);
 });
 
-timecardReviewApp.controller('timecardReviewCtrl', function ($scope, locationFactory) {
-    //$scope.$watch(locationFactory.getCurrentPathLocation, locationFactory.loginRedirect);
+timecardReviewApp.controller('timecardReviewCtrl', function ($rootScope, $scope, locationFactory) {
+    $scope.$watch(locationFactory.getCurrentPathLocation, locationFactory.loginRedirect);
 
     $scope.logOut = function() {
-        //$cookieStore.remove('activeUser'); // Remove the active user cookie.
+        $rootScope.activeManager = undefined;
+        localforage.removeItem('activeManager');
     }
 });

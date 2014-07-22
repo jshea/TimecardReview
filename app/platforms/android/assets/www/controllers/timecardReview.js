@@ -22,6 +22,27 @@ timecardReviewApp.config(function ($routeProvider) {
     });
 });
 
+timecardReviewApp.constant('URL', 'http://27bd01dd.ngrok.com');
+
+timecardReviewApp.run(function($window, $rootScope, restFactory) {
+    $rootScope.online = navigator.onLine;
+
+    $window.addEventListener("offline", function () {
+        $rootScope.$apply(function() {
+            $rootScope.online = false;
+        });
+    }, false);
+
+    $window.addEventListener("online", function () {
+        $rootScope.$apply(function() {
+            if (!$rootScope.online) {
+                restFactory.updateDirtyEmployees();
+            }
+            $rootScope.online = true;
+        });
+    }, false);
+});
+
 timecardReviewApp.controller('timecardReviewCtrl', function ($scope, locationFactory) {
     //$scope.$watch(locationFactory.getCurrentPathLocation, locationFactory.loginRedirect);
 

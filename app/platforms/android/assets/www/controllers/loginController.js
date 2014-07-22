@@ -1,8 +1,8 @@
 angular.module('timecardReview')
-    .controller('loginCtrl', function($scope, restFactory, locationFactory) {
+    .controller('loginCtrl', function($scope, httpFactory, locationFactory) {
         // Login function activated when a user clicks Log In.
         $scope.login = function (user, pass) {
-            restFactory.loginWithCred({username: user, password: pass}, 
+            httpFactory.loginWithCred({username: user, password: pass}, 
                 function() { // Call the login REST service.
                     //$cookieStore.put('activeUser', user); // Store a login cookie.
                     locationFactory.toListPage(); // Change the page to the main employees list.
