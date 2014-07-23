@@ -22,7 +22,7 @@ timecardReviewApp.config(function ($routeProvider) {
     });
 });
 
-timecardReviewApp.constant('URL', 'http://27bd01dd.ngrok.com');
+timecardReviewApp.constant('URL', 'http://32ec3089.ngrok.com');
 
 timecardReviewApp.run(function($window, $rootScope, restFactory) {
     $rootScope.online = navigator.onLine;
@@ -43,10 +43,11 @@ timecardReviewApp.run(function($window, $rootScope, restFactory) {
     }, false);
 });
 
-timecardReviewApp.controller('timecardReviewCtrl', function ($scope, locationFactory) {
+timecardReviewApp.controller('timecardReviewCtrl', function ($rootScope, $scope, locationFactory) {
     //$scope.$watch(locationFactory.getCurrentPathLocation, locationFactory.loginRedirect);
 
     $scope.logOut = function() {
-        //$cookieStore.remove('activeUser'); // Remove the active user cookie.
+        $rootScope.activeManager = undefined;
+        localforage.removeItem('activeManager');
     }
 });

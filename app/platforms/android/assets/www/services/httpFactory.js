@@ -1,9 +1,8 @@
 angular.module('timecardReview')
-    .factory('httpFactory', function($http, URL) {
+    .factory('httpFactory', function($rootScope, $http, URL) {
         return {
             getAllEmployeesForActiveManager: function (successCallback) {
-                //var url = baseUrl + '/all/' + $cookieStore.get('activeUser');
-                var url = URL + '/all/mslate';
+                var url = URL + '/all/' + 'mslate';
 
                 $http.get(url).success(successCallback).error(function (data, status, headers, config) {
                     console.log('httpFactory.getAllEmployeesForActiveManager() Error: ' + data);

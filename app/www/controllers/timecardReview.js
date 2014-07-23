@@ -22,7 +22,7 @@ timecardReviewApp.config(function ($routeProvider) {
     });
 });
 
-timecardReviewApp.constant('URL', 'http://localhost:3000');
+timecardReviewApp.constant('URL', 'http://32ec3089.ngrok.com');
 
 timecardReviewApp.run(function($window, $rootScope, restFactory) {
     $rootScope.online = navigator.onLine;
@@ -44,7 +44,7 @@ timecardReviewApp.run(function($window, $rootScope, restFactory) {
 });
 
 timecardReviewApp.controller('timecardReviewCtrl', function ($rootScope, $scope, locationFactory) {
-    $scope.$watch(locationFactory.getCurrentPathLocation, locationFactory.loginRedirect);
+    //$scope.$watch(locationFactory.getCurrentPathLocation, locationFactory.loginRedirect);
 
     $scope.logOut = function() {
         $rootScope.activeManager = undefined;

@@ -1,7 +1,7 @@
 angular.module('timecardReview')
     .factory('forageFactory', function($rootScope, URL) {
         // These functions should only be called in the case that the application is off-line.
-        var url = URL + '/all/' + $rootScope.activeManager; // TO DO: Replace with login cookie user information.
+        var url = URL + '/all/' + 'mslate'; // TO DO: Replace with login cookie user information.
         return {
             getAllEmployeesForActiveManager: function (successCallback) {
                 localforage.getItem(url, successCallback); 
@@ -19,7 +19,9 @@ angular.module('timecardReview')
                 localforage.getItem(url, function (employees) {
                     employees[employee.index].timeCardReviewed = employee.timeCardReviewed;
                     employees[employee.index].isDirty = true;
-                    localforage.setItem(url, employees, successCallback);
+                    localforage.setItem(url, employees, function (data) {
+                        successCallback(data[employee.index]);
+                    });
                 });
             }
         }

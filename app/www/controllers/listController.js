@@ -3,7 +3,7 @@ angular.module('timecardReview')
         restFactory.getAllEmployeesForActiveManager(function (data) {
             $scope.employees = data;
 
-            if ($scope.online) localforage.setItem(URL + '/all/' + $scope.activeManager, data);
+            if ($scope.online) localforage.setItem(URL + '/all/' + 'mslate', data);
             else $scope.$digest();
         });
 

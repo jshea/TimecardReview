@@ -26,10 +26,11 @@ angular.module('timecardReview')
                 }
             },
             updateDirtyEmployees: function () {
-                var url = URL + '/all/' + $rootScope.activeManager;
+                var url = URL + '/all/' + 'mslate';
                 localforage.getItem(url, function (employees) {
                     for (var i = 0; i < employees.length; ++i) {
                         if (employees[i].isDirty) {
+                            employees[i].isDirty = false;
                             httpFactory.updateEmployeeReviewedByUsername(employees[i].userName, employees[i], function (data) {
                                 console.log("Successfully updated dirty employees!");
                             });

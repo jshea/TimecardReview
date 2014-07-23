@@ -3,7 +3,7 @@ angular.module('timecardReview')
         restFactory.getAllEmployeesForActiveManager(function (data) {
             $scope.employees = data;
 
-            if ($scope.online) localforage.setItem(URL + '/all/' + $scope.activeManager, data);
+            if ($scope.online) localforage.setItem(URL + '/all/' + 'mslate', data);
             else $scope.$digest();
         });
 
@@ -19,9 +19,7 @@ angular.module('timecardReview')
         // Called to update employees reviewed status.
         $scope.updateReviewed = function () {
             restFactory.updateEmployeeReviewed($scope.employee.userName, $scope.employee, function (data) {
-                    if ($scope.online) $scope.employee = data;
-                    else $scope.employee = data[$scope.employee.index];
-
+                    $scope.employee = data;
                     locationFactory.reloadRoute();
                 }
             );
