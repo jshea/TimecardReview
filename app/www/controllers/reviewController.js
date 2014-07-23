@@ -1,5 +1,7 @@
 angular.module('timecardReview')
     .controller('reviewCtrl', function ($scope, $routeParams, URL, restFactory, locationFactory, chartFactory, exportFactory) {
+        $scope.json = JSON.stringify({a:1, b:2});
+
         restFactory.getAllEmployeesForActiveManager(function (data) {
             $scope.employees = data;
 
@@ -9,6 +11,8 @@ angular.module('timecardReview')
 
         restFactory.getEmployeeByUsername($routeParams.name, function (data) {
             $scope.employee = data;
+
+            $scope.jsonEmployeeUrl = exportFactory.getJsonEmployeeUrl($routeParams.name);
 
             $scope.weeklyHoursChart = chartFactory.getWeeklyHoursBarChartData(data);
             $scope.accrualsChart = chartFactory.getAccrualsPieChartData(data);
@@ -25,7 +29,7 @@ angular.module('timecardReview')
             );
         }
 
-        // Let the user export an employees timecard data.
+        // Let the user export an employees timecard data in csv.
         $scope.getCsvEmployee = exportFactory.getCsvEmployee;
 
         // Change to review page based on login name.

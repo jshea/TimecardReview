@@ -1,5 +1,5 @@
 angular.module('timecardReview')
-    .factory('exportFactory', function() {
+    .factory('exportFactory', function(URL) {
         return {
             getCsvEmployee: function (employee) {
                 var result = [];
@@ -41,6 +41,9 @@ angular.module('timecardReview')
                 }
 
                 return function() { return result; }
+            },
+            getJsonEmployeeUrl: function (name) {
+                return URL + '/employee/' + name;
             }
         }
     });

@@ -172,7 +172,7 @@
 
             <div class="tab-pane fade" id="export"> <!-- Begin tab pane fade. -->
                <div class="well">
-                  <!--<button type="button" class="btn btn-primary btn-lg" ng-click="">PDF</button>&nbsp;&nbsp;&nbsp;-->
+                  <a type="button" class="btn btn-primary btn-lg" download="employee.json" href="{{jsonEmployeeUrl}}">JSON</a>&nbsp;&nbsp;
                   <button type="button" class="btn btn-primary btn-lg" ng-csv="getCsvEmployee(employee)" filename="employee.csv">CSV</button>
                </div>
             </div> <!-- End tab pane fade. -->
